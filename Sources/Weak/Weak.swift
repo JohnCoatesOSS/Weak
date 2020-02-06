@@ -64,7 +64,7 @@ public protocol WeakProtocol {
     associatedtype Object: AnyObject
 
     /// The object of `self`.
-    weak var object: Object? { get }
+    var object: Object? { get }
 
 }
 
@@ -72,7 +72,7 @@ extension Sequence where Iterator.Element: WeakProtocol {
 
     /// The objects within `self`.
     public var objects: [Iterator.Element.Object] {
-        return flatMap { $0.object }
+        return compactMap { $0.object }
     }
 
 }

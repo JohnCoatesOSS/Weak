@@ -50,7 +50,7 @@ public protocol UnownedProtocol {
     associatedtype Object: AnyObject
 
     /// The object of `self`.
-    unowned var object: Object { get }
+    var object: Object { get }
 
 }
 
